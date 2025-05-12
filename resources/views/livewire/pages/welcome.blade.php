@@ -90,7 +90,6 @@ state([
       <div class="mb-20 grid grid-cols-1 gap-y-5">
         <img src="https://managememberships.com/images/logo.png" class="w-32 mx-auto" alt="Logo">
         <p class="text-4xl font-extrabold text-center">Manage Register</p>
-        <p class="text-lg text-center sm:mx-0 mx-5">Dengan lakasir anda bisa mengelola toko anda dengan mudah, berikut fitur yang dimiliki oleh lakasir.</p>
       </div>
       <div class="grid sm:grid-cols-3 grids-cols-3 lg:gap-20 gap-10 px-10">
         @foreach($mainFeatures as $feature)
