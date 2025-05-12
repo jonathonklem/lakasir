@@ -13,6 +13,9 @@ return [
     | This will allow your users to receive real-time notifications.
     |
     */
+    'colors' => [
+        'primary' => '#2e7d32', // dark green, for example
+    ],
 
     'broadcasting' => [
 

@@ -20,11 +20,13 @@ class DomainCreated extends Notification implements ShouldQueue
     public function toMail(User $notifiable)
     {
         return (new MailMessage)
-            ->line('Selamat datang di Lakasir')
-            ->line('Terima kasih telah menggunakan aplikasi kami!')
-            ->line('Kami telah membuatkan domain untuk anda, silahkan daftarkan domain '.tenant()->domains->first()->domain.' ke aplikasi di menu domain')
-            ->line('dan domain anda akan aktif dalam waktu 30 hari untuk masa percobaan')
-            ->salutation('Lakasir');
+            ->line('Welcome to ManageRegister')
+            ->line('Thank you for using our application!')
+            ->line('We have created a domain for you: '.tenant()->domains->first()->domain.' .')
+            ->line('Let us know if you have any questions.')
+            ->line('Thanks,')
+            ->salutation('ManageRegister Team');
+    
     }
 
     public function toArray(User $notifiable)

@@ -136,7 +136,7 @@ class TenantPanelProvider extends PanelProvider
             ->databaseNotifications()
             ->id('tenant')
             ->viteTheme('resources/css/filament/tenant/theme.css')
-            ->colors(['primary' => Color::hex('#FF6600')])
+            ->colors(['primary' => Color::hex('#1f3a8a')])
             ->assets([
                 Js::make('custom-javascript', resource_path('js/app.js')),
                 Js::make('printer', resource_path('js/printer.js')),
