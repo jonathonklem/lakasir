@@ -12,10 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('receivables', function (Blueprint $table) {
-            $table->dropForeign(['member_id']);
             $table->foreign(['member_id'])->references('id')->on('members')->onDelete('cascade');
-
-            $table->dropForeign(['selling_id']);
             $table->foreign(['selling_id'])->references('id')->on('sellings')->onDelete('cascade');
         });
     }
@@ -26,10 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('receivables', function (Blueprint $table) {
-            $table->dropForeign(['member_id']);
             $table->foreign('member_id', 'debts_member_id_foreign')->references('id')->on('members')->onDelete('cascade');
-
-            $table->dropForeign(['selling_id']);
             $table->foreign('selling_id', 'debts_selling_id_foreign')->references('id')->on('sellings')->onDelete('cascade');
         });
     }

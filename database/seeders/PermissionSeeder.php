@@ -313,7 +313,11 @@ class PermissionSeeder extends Seeder
     private function givePermissionToRole($role, $permission): void
     {
         /** @var ModelsRole $role */
-        $role = ModelsRole::where('name', $role[0])->firstOrCreate(['name' => $role[0]]);
+	$role = ModelsRole::firstOrCreate([
+	    'name' => $role[0],
+	    'guard_name' => 'web',
+	]);
+
         $role->permissions()->syncWithoutDetaching($permission);
     }
 

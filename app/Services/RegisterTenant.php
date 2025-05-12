@@ -25,6 +25,11 @@ class RegisterTenant
             'domain' => $data['domain'],
         ]);
 
+	Artisan::call('tenants:migrate', [
+	    '--tenants' => $tenant->id,
+	    '--seed' => true,
+	]);
+
         $tenant->run(function () use ($data) {
             $user = User::create([
                 'email' => $data['email'],
@@ -40,15 +45,6 @@ class RegisterTenant
 
             $user->notify(new DomainCreated());
 
-            Artisan::call('db:seed', [
-                '--class' => 'PermissionSeeder',
-            ]);
-            Artisan::call('db:seed', [
-                '--class' => 'PaymentMethodSeeder',
-            ]);
-            Artisan::call('db:seed', [
-                '--class' => 'CategorySeeder',
-            ]);
             $user->assignRole(Role::admin);
         });
 
