@@ -1,6 +1,6 @@
 <div class="max-w-full">
   <div class="text-center space-y-2">
-    <h1 class="text-3xl font-semibold">Laporan kasir</h1>
+    <h1 class="text-3xl font-semibold">{{ __('Laporan kasir') }}</h1>
     <h3 class="text-xl">{{ $header['shop_name'] }}</h3>
   </div>
   <p class="mb-4">{{ __('Period') }}: <b>{{ $header['start_date'] }} - {{ $header['end_date'] }}</b></p>
