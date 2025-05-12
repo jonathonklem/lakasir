@@ -89,6 +89,11 @@ class TenantPanelProvider extends PanelProvider
         $panel = $this->configurePanel($panel);
 
         $url = request()->getHost();
+
+        if (app()->environment('local') && $url === 'localhost') {
+            $url = env('APP_CENTRAL_DOMAIN'); // fallback domain
+        }
+        
         if ($this->isCentralDomainConfigured()) {
             $this->initializeTenantPanel($panel, $url);
         } else {
